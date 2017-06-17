@@ -34,5 +34,7 @@ ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
 
+.idea
 dist
 test
+index.test.html
