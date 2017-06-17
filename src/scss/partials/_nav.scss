@@ -1,0 +1,142 @@
+.nav-container {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.1);
+  background-color: $dark-purple;
+  border-right: 1px solid #ddd;
+
+  .branding {
+
+    max-width: $sidebar-width;
+    text-align: center;
+    margin-bottom: 1px;
+
+    h1 {
+      text-align: center;
+      margin: 0;
+      padding: .67em 0 0 0;
+      font-size: 2rem;
+      color: #fff;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      color:  #fff;
+      padding-bottom: .67em;
+    }
+  }
+
+  .navbar-default
+  {
+    border-radius: 0;
+    background-image: none;
+    background-color: $dark-purple;
+    box-shadow: none;
+    border: 0;
+
+    .navbar-nav {
+      padding: 8px;
+      background-color: transparent;
+
+      li {
+        background-color: $purple;
+        margin: 8px 0;
+
+        border: 1px solid $dark-purple;
+
+        li:not(.divider) {
+          border: none;
+        }
+
+        &.active {
+
+          border-color: darken($dark-purple,20%);
+
+          a {
+            background: lighten($dark-blue,10%);
+            color: #fff;
+
+            &:hover {
+              color: #fff;
+            }
+          }
+
+          .dropdown-menu {
+            background: lighten($dark-blue,10%);
+
+            a:hover , li:hover {
+              background: lighten($dark-blue,10%);
+            }
+          }
+        }
+
+        a {
+          color: white;
+          font-size: 1.6rem;
+
+          &:hover {
+            color: #ccc;
+          }
+        }
+
+        &.open {
+          & > a {
+            /*background: $purple !important;*/
+            color: #fff;
+            border-bottom: 2px solid $dark-purple;
+          }
+
+          .dropdown-menu {
+            a:hover {
+              background: none;
+            }
+          }
+        }
+
+      }
+    }
+  }
+
+  @media only screen and (max-width:765px) {
+    width: 100%;
+    min-height: auto;
+    display: block;
+    position: static;
+
+    .navbar {
+      width: 100%;
+      float: none;
+      margin-bottom: 0;
+
+      .navbar-header {
+        .branding {
+          float: left;
+          padding: 0em 1.3em;
+        }
+      }
+    }
+  }
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: darken($dark-purple,10%);
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    background: $purple;
+}
+
+@media (max-width: 767px)
+{
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+        color: #fff;
+  }
+}
